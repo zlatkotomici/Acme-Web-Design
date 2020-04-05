@@ -1,0 +1,220 @@
+/* Global */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin: 0;
+    padding: 0;
+    /* font: 16 1.6 Arial, Helvetica, sans-serif; will be the same. */
+}
+
+/* Global, ptr ca avem clasa container peste tot, aproape. */
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+/* Global, il putem folosi unde dorim. */
+.button_1 {
+    background-color: #e8491d;
+    color: #fff;
+    border: none;
+    padding: 0 20px;
+    height: 37px;
+}
+
+/* Global, il putem atasa unde dorim. */
+.dark {
+    background-color: #35424a;
+    color: #fff;
+    padding: 15px;
+    margin: 10px 0;
+}
+
+   /* Header */
+
+header {
+    background-color: #35424a;
+    color: #fff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: 3px solid #e8491d;
+}
+/* min-height:70px; ptr al face RESPONSIVE, cand marim pagina se mareste si 
+headerul. */
+
+header a {
+    color: #fff;
+    text-decoration: none;
+}
+header ul {
+    margin: 0;
+    padding: 0;
+    /* float: right; */
+}
+/* by default ul are margini, pading si bullet-uri,
+deci asa scapam de ele, fara buleet-uri si margini.*/
+
+header li{
+    display: inline;
+    padding: 0 20px;
+}
+/* asa punem link-urile pe Horizontal, inline.
+ptr.ca avem display:inline nu putem adauga float,etc. */
+
+header #branding {
+    float: left;
+    margin: 0;
+}
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+/* acum logo-ul se duce left, iar cele 3 link-uri din nav se duc right.
+-margin-top:10px; si coboara navigarea un pic mai jos. */
+
+header .highlight, .current a {
+    color: #e8491d;
+    font-weight: bold;
+}
+/* -aici am folosit 2 clase, .highlight e ptr span, ptr cuvantul "Acme"
+-iar .current este ptr linkul activ.???
+OBS.-se poate si fara cuvantul header, dar e bine sa stim de unde provine. */
+
+header a:hover {
+    color: #ccc;
+    font-weight: bold;
+}
+
+    /* Showcase */
+#showcase {
+    min-height: 400px;
+    background-image: url('../images/showcase.jpg');
+    /* background: url(../images/showcase.jpg); same thing as above.
+    -IMPORTANT: asa adaugam o imagine pe fundal, background*/
+    text-align: center;
+    color: #fff;
+}
+#showcase h1 {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    font-size: 55px;
+}
+
+    /* Newsletter */
+#newsletter {
+    padding: 15px;
+    background-color: #35424a;
+    color: #fff;
+}
+#newsletter h1 {
+    float: left;
+}
+#newsletter form {
+    float: right;
+    margin-top: 15px;
+}
+#newsletter input[type="email"] {
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+    /* Boxes */
+#boxes {
+    margin-top: 20px;
+}
+#boxes .box {
+    float: left;
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+}
+#boxes .box img {
+    width: 100px;
+}
+/* OBS-asa modificam marimea unei poze, imagini din pagina web. */
+
+    /* Article  #main-column*/
+article#main-column {
+    float: left;
+    width: 65%;
+}
+
+    /* Aside  #sidebar */
+aside#sidebar {
+    float: right;
+    width: 30%;
+    margin-top: 10px;
+}
+/* OBS-elementul, tagul "aside" trebuie sa fie lipt de id-ul "#sidebar", 
+ca sa functioneze, fara spatiu ca la "class";
+bineinteles merge si fara "aside", l-am pus sa stim de unde provine. */
+
+aside#sidebar .quote input, aside#sidebar .quote textarea {
+    width: 90%;
+    padding: 5px;
+}
+/* .quote input, .quote textarea -merge si asa.
+-aici la input, facem casutele sa fie mai lungi, dam width 90% din blockul respectiv,
+nu din tot blockul pagini, si padding 5px face un pic spatiu in chenar. */
+
+    /* Services */
+ul#services li {
+    background-color: #e6e6e6;
+    list-style: none;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 5px;
+}
+
+    /* Footer */
+footer {
+    background-color: #e8491d;
+    color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+    /* Media Query
+-acum trebuie sa-l facem RESPONSIVE.
+-il setam cu @media query, deci acest grup de CSS va lucra doar daca are 
+o latime anume, respectiva; daca ecranul are o "certain width".*/
+
+@media(max-width: 768px) {
+    header #branding,
+    header nav,
+    header nav li,
+    #newsletter h1,
+    #newsletter form,
+    #boxes .box,
+    article#main-column,
+    aside#sidebar {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+}
+header {
+    padding-bottom: 20px;
+}
+#showcase h1 {
+line-height: 1em;
+}
+#newsletter input[type="email"], #newsletter button {
+    width: 100%;
+    margin-bottom: 5px;
+}
+article#main-column li {
+    margin-right: 25px;
+    margin-left: -15px;
+}
+/* -IMPORTANT-asa selectam input[type="email"],
+-trebuie selectat fiecare separat, nu merge la comun,
+ ex: #newsletter form, #newsletter input. */
+ /* IMPORTANT
+ -ptr a fi RESPONSIVE selectam toate elementele care contin FLOAT
+ si redefinim unele caracteristici ptr a aranja in pagina. */
